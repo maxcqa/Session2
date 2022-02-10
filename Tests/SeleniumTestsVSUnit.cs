@@ -34,7 +34,7 @@ namespace Tests
             page.OpenLoginPage();
 
             // Suspend logging
-            this.Log.LogMessage(MessageType.INFORMATION, "Logging suspended while entering credentials");
+            this.Log.LogMessage(MessageType.INFORMATION, "Login page is opened. Logging will be suspended while entering credentials");
             this.Log.SuspendLogging();
 
             // Use value and object collections
@@ -45,6 +45,7 @@ namespace Tests
             this.Log.LogMessage(MessageType.INFORMATION, "Logging is resumed after entering credentials");
 
             Assert.IsTrue(homepage.IsPageLoaded());
+            this.Log.LogMessage(MessageType.INFORMATION, "Login successful");
 
             // End timer
             this.PerfTimerCollection.StopTimer("Login timer");
